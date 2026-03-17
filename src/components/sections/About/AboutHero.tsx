@@ -56,7 +56,7 @@ export default function AboutHero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505] opacity-60 -z-10"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-360 px-6 md:px-12 lg:px-0 flex flex-col justify-center h-full">
+      <div className="relative z-10 w-full max-w-360 px-6 md:px-12 lg:px-10 flex flex-col justify-center h-full">
         {/* Small Tagline */}
         <div className="hero-tag mb-8 opacity-0">
           <p className="text-[#a3a3a3] text-[10px] sm:text-xs tracking-[0.2em] font-medium uppercase border-b border-white/20 inline-block pb-1">

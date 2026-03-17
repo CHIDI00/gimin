@@ -7,7 +7,7 @@ import HoverText from "../ui/HoverText";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#050505] text-white px-6 md:px-12 lg:px-24 pt-20 pb-0 overflow-hidden relative font-sans break-words selection:bg-gray-800">
+    <footer className="bg-[#050505] text-white px-6 md:px-12 lg:px-10 pt-20 pb-0 overflow-hidden relative font-sans break-words selection:bg-gray-800">
       <div className="max-w-360 mx-auto">
         {/* Top Logo Section */}
         <div className="flex flex-col items-center mb-24 md:mb-32">

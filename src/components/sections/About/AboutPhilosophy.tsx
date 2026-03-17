@@ -72,7 +72,7 @@ export default function AboutPhilosophy() {
       ref={containerRef}
       className="relative w-full bg-[#050505] py-24 md:py-32 flex flex-col z-20 overflow-hidden"
     >
-      <div className="max-w-360 mx-auto w-full px-6 md:px-12 lg:px-0">
+      <div className="max-w-360 mx-auto w-full px-6 md:px-12 lg:px-10">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between mb-32 gap-12 lg:gap-24">
           {/* Left: Heading */}

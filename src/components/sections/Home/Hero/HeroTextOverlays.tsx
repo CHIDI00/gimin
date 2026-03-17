@@ -29,7 +29,7 @@ const labels = [
     textPos: { top: "32%", right: "15%" },
     targetPos: { top: "64%", right: "30%" },
     startFrame: 1,
-    endFrame: 28,
+    endFrame: 25,
   },
 
   // Phase 2
@@ -40,8 +40,8 @@ const labels = [
     side: "left",
     textPos: { top: "50%", left: "18%" },
     targetPos: { top: "30%", left: "43%" },
-    startFrame: 20,
-    endFrame: 50,
+    startFrame: 15,
+    endFrame: 45,
   },
   {
     id: "chest",
@@ -50,7 +50,7 @@ const labels = [
     side: "right",
     textPos: { top: "70%", right: "18%" },
     targetPos: { top: "20%", right: "50%" },
-    startFrame: 15,
+    startFrame: 12,
     endFrame: 40,
   },
   // Phase 3
@@ -61,8 +61,8 @@ const labels = [
     side: "left",
     textPos: { top: "75%", left: "20%" },
     targetPos: { top: "80%", left: "46%" },
-    startFrame: 40,
-    endFrame: 80,
+    startFrame: 35,
+    endFrame: 70,
   },
   {
     id: "hamstrings",
@@ -72,7 +72,7 @@ const labels = [
     textPos: { top: "55%", right: "28%" },
     targetPos: { top: "70%", right: "45%" },
     startFrame: 43,
-    endFrame: 80,
+    endFrame: 70,
   },
   {
     id: "foundation",
@@ -81,8 +81,8 @@ const labels = [
     side: "right",
     textPos: { top: "80%", right: "20%" },
     targetPos: { top: "80%", right: "40%" },
-    startFrame: 65,
-    endFrame: 96,
+    startFrame: 60,
+    endFrame: 90,
   },
 ];
 
@@ -95,8 +95,6 @@ export default function HeroTextOverlays() {
         gsap.set(`#text-${l.id}`, { opacity: 0, y: 16 });
         gsap.set(`#line-${l.id}`, { strokeDashoffset: 100, opacity: 1 });
       });
-
-      gsap.set("#cta-button", { opacity: 0, y: 20 });
 
       // 2. Main Labels Scrub Timeline
       const tl = gsap.timeline({
@@ -169,32 +167,6 @@ export default function HeroTextOverlays() {
           },
           label.endFrame - 10,
         );
-      });
-
-      ScrollTrigger.create({
-        trigger: "#hero-scroll-container",
-        start: "bottom 70%",
-        end: "bottom bottom",
-        onEnter: () => {
-          // Play the animation forward when scrolling down and entering this zone
-          gsap.to("#cta-button", {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "power3.out",
-          });
-        },
-        onLeaveBack: () => {
-          // Play the animation backward (or simply fade it out) when scrolling up and leaving the zone
-          gsap.to("#cta-button", {
-            opacity: 0,
-            y: 32,
-            duration: 0.5,
-            stagger: 0.05,
-            ease: "power2.inOut",
-          });
-        },
       });
     },
     { scope: containerRef },
@@ -276,34 +248,6 @@ export default function HeroTextOverlays() {
           </div>
         </div>
       ))}
-
-      <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex px-10 w-full items-end justify-between pointer-events-auto">
-        <div className="text-white/40 text-left md:text-md text-sm tracking-[0.1em] uppercase ">
-          <p>Scroll to explore</p>
-        </div>
-
-        <div
-          id="cta-button"
-          // ref={containerRef}
-          className="relative flex w-[55%] justify-between items-end p-0"
-        >
-          <button
-            // id="cta-button"
-            className="px-10 py-4 bg-white text-xs tracking-[0.25em] uppercase font-bold hover:bg-white/90 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] relative overflow-hidden group rounded-sm"
-          >
-            <span className="relative z-10 group-hover:tracking-[0.3em] transition-all duration-300 ease-out text-black">
-              Join GIMIN
-            </span>
-          </button>
-
-          <p
-            // id="cta-button"
-            className="text-white text-right text-md tracking-[0.2em] uppercase font-bold mb-1 drop-shadow-lg"
-          >
-            The result you get <br /> is a balanced physique
-          </p>
-        </div>
-      </div>
     </div>
   );
 }

@@ -59,7 +59,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Menu bar icon */}
+      {/* menu bar icon */}
       <button
         onClick={toggleMenu}
         className="md:hidden flex flex-col justify-center items-center w-8 h-8 relative z-50 pointer-events-auto"
@@ -73,7 +73,7 @@ export default function Navbar() {
         ></div>
       </button>
 
-      {/* Mobile Menu Overlay */}
+      {/* mobile menu overlay */}
       <MobileMenu isOpen={isOpen} closeMenu={closeMenu} />
     </nav>
   );

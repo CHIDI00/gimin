@@ -1,9 +1,11 @@
 import ContactForm from "@/components/sections/Contact/ContactForm";
 import ContactInfo from "@/components/sections/Contact/ContactInfo";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   return (
-    <main className="min-h-screen bg-[#050505] text-white pt-32 pb-20 px-6 sm:px-12 lg:px-0 font-sans">
+    <main className="min-h-screen bg-[#050505] text-white pt-32 pb-20 px-6 sm:px-12 lg:px-10 font-sans">
       <div className="max-w-360 mx-auto">
         <div className="mb-20 max-w-2xl">
           <p className="text-blue-700 uppercase text-xs sm:text-[10px] font-bold tracking-[0.2em] mb-4">

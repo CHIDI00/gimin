@@ -78,7 +78,7 @@ export default function AboutPrinciples() {
       ref={containerRef}
       className="relative w-full bg-[#050505] py-24 md:py-32 z-20 overflow-hidden"
     >
-      <div className="max-w-360 mx-auto w-full px-6 md:px-12 lg:px-0">
+      <div className="max-w-360 mx-auto w-full px-6 md:px-12 lg:px-10">
         {/* Header */}
         <div className="mb-20 lg:mb-32">
           <p className="principle-tag text-[#a3a3a3] text-[10px] sm:text-xs tracking-[0.2em] font-medium uppercase mb-8">

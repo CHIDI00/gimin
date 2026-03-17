@@ -45,14 +45,14 @@ export default function TrainingTeaser() {
         },
       });
 
-      // Fade in the section header
+      // fade in the section header
       tl.fromTo(
         ".teaser-header",
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
       );
 
-      // Stagger the 3 cards sliding up
+      // stagger the 3 cards sliding up
       tl.fromTo(
         ".teaser-card",
         { opacity: 0, y: 40 },
@@ -89,7 +89,7 @@ export default function TrainingTeaser() {
       className="relative w-full bg-[#050505] py-24 md:py-32 px-6 md:px-12 lg:px-14 z-20"
     >
       <div className="max-w-screen-[90rem] mx-auto">
-        {/* Header Area */}
+        {/* header Area */}
         <div className="teaser-header flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <h2 className="text-white text-3xl md:text-5xl font-black uppercase tracking-tight mb-2">
@@ -112,7 +112,7 @@ export default function TrainingTeaser() {
           </Link>
         </div>
 
-        {/* column Grid */}
+        {/* column grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {pillars.map((pillar) => (
             <Link
@@ -120,9 +120,9 @@ export default function TrainingTeaser() {
               key={pillar.id}
               className="teaser-card group relative block aspect-[4/5] overflow-hidden bg-[#1a1a1a] rounded-sm"
             >
-              {/* Parallax Wrapper (Controlled by GSAP) */}
+              {/* Parallax Wrapper */}
               <div className="parallax-wrapper absolute -top-[15%] -bottom-[15%] left-0 right-0 w-full">
-                {/* Image Background (Controlled by Tailwind hover) */}
+                {/* Image Background */}
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
                   style={{ backgroundImage: `url(${pillar.image})` }}

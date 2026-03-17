@@ -6,7 +6,9 @@ import Team from "@/components/sections/Home/Team";
 import Testimonials from "@/components/sections/Home/Testimonial/Testimonial";
 import TrainingTeaser from "@/components/sections/Home/TrainingTeaser/TrainingTeaser";
 
-export default function Home() {
+export default async function Home() {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
+
   return (
     <>
       <Hero />

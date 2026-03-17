@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-import contactImage from "../../../../public/contactImage.avif";
+import contactImage from "../../../../public/scatteredImages/scatter-0.png";
 import HoverText from "@/components/ui/HoverText";
 
 export default function ContactForm() {
