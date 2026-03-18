@@ -89,7 +89,7 @@ export default function TrainingTeaser() {
       ref={sectionRef}
       className="relative w-full bg-[#050505] py-24 md:py-32 px-6 md:px-12 lg:px-14 z-20"
     >
-      <div className="max-w-screen-[90rem] mx-auto">
+      <div className="max-w-360 mx-auto">
         {/* header Area */}
         <div className="teaser-header flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>

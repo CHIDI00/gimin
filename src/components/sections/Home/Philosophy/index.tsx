@@ -52,10 +52,10 @@ export default function Philosophy() {
       ref={containerRef}
       className="relative w-full bg-[#050505] py-32 md:py-48 px-6 md:px-14 lg:px-14 z-20"
     >
-      <div className="max-w-screen-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
+      <div className="max-w-360 mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8">
         {/* Left Side: Massive Headline */}
-        <div className="lg:col-span-8 flex flex-col justify-center">
-          <h2 className="text-[12vw] lg:text-[7vw] font-black uppercase leading-[0.85] tracking-tight text-white">
+        <div className="lg:col-span-8 xl:col-span-9 flex flex-col justify-center">
+          <h2 className="text-[12vw] lg:text-[6vw] xl:text-[5vw] font-black uppercase leading-[0.85] tracking-tight text-white">
             <div className="overflow-hidden pb-2">
               <span className="block philosophy-line translate-y-full">
                 We build the
@@ -80,7 +80,7 @@ export default function Philosophy() {
         </div>
 
         {/* Right Side: Supporting Paragraph */}
-        <div className="lg:col-span-4 flex flex-col justify-end lg:pb-4">
+        <div className="lg:col-span-4 xl:col-span-3 flex flex-col justify-end lg:pb-4">
           <div className="max-w-sm">
             <p className="philosophy-text text-white/70 text-xs md:text-[1vw] leading-relaxed font-light mb-6 opacity-0 translate-y-4">
               GIMIN is not just about moving weights. It is about precision. We

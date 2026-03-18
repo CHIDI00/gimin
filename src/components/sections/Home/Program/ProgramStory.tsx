@@ -57,7 +57,7 @@ export default function ProgramStory() {
       ref={sectionRef}
       className="relative w-full bg-[#050505] py-24 md:py-32 px-6 md:px-12 lg:px-14 z-20"
     >
-      <div className="max-w-screen-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      <div className="max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
         {/* left side*/}
         <div className="grid grid-cols-4 gap-2 md:gap-7 w-full aspect-[4/5] lg:aspect-1/2">
           {gridPattern.map((item, index) => {
@@ -75,7 +75,7 @@ export default function ProgramStory() {
                     src={`/scatteredImages/scatter-${index}.png`}
                     alt={`Program detail ${index}`}
                     fill
-                    sizes="(max-width: 768px) 25vw, (max-width: 1200px) 20vw, 10vw"
+                    sizes="(max-width: 768px) 30vw, (max-width: 1200px) 25vw, 20vw"
                     className="object-cover object-center"
                     style={{
                       backgroundColor: `hsl(0, 0%, ${18 + index * 3}%)`,
