@@ -133,11 +133,11 @@ export default function Footer() {
                     <HoverText>About</HoverText>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#" className="hover:text-white transition-colors">
                     <HoverText>Careers</HoverText>
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
                     <HoverText>Journal</HoverText>
@@ -167,7 +167,7 @@ export default function Footer() {
 
           <div className="flex gap-3">
             <a
-              href="#"
+              href="https://www.instagram.com/chidi.mathaias?igsh=OGNxeHhwd3V1d29z&utm_source=qr"
               className="w-10 h-10 rounded-full bg-[#111111] flex items-center justify-center hover:bg-[#27272a] transition-colors"
             >
               <Instagram
