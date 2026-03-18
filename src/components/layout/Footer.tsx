@@ -4,6 +4,7 @@ import React from "react";
 import { Instagram, Facebook, Twitter } from "lucide-react";
 import Link from "next/link";
 import HoverText from "../ui/HoverText";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -187,7 +188,7 @@ export default function Footer() {
               href="https://x.com/chidi_mathaias"
               className="w-10 h-10 rounded-full bg-[#111111] flex items-center justify-center hover:bg-[#27272a] transition-colors"
             >
-              <Twitter
+              <FaXTwitter
                 className="w-[18px] h-[18px] text-[#a1a1aa]"
                 strokeWidth={1.5}
               />

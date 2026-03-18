@@ -123,7 +123,7 @@ export default function Testimonials() {
     >
       <div
         ref={containerRef}
-        className="relative w-full max-w-[90rem] h-[50rem] py-24 md:py-32 px-6 md:px-12 lg:px-24 flex items-center justify-center overflow-hidden mx-auto rounded-lg"
+        className="relative w-full max-w-[90rem] md:h-[50rem] h-[30rem] py-24 md:py-32 px-6 md:px-12 lg:px-24 flex items-center justify-center overflow-hidden mx-auto rounded-lg"
       >
         <div
           ref={bgRef}
