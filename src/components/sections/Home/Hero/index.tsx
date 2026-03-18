@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react"; // Added useState
 import { Inter } from "next/font/google";
 import HeroCanvas from "./HeroCanvas";
 import HeroTextOverlays from "./HeroTextOverlays";
@@ -20,6 +20,8 @@ const inter = Inter({
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  // Add a state switch to track if the canvas has loaded the first image
+  const [isCanvasReady, setIsCanvasReady] = useState(false);
 
   useGSAP(
     () => {
@@ -54,31 +56,30 @@ export default function Hero() {
 
   return (
     <section
-      // ref={containerRef}
       id="hero-scroll-container"
       className={`relative w-full bg-[#03060d] text-white ${inter.className}`}
       style={{ height: "500vh" }}
     >
       <div
         ref={containerRef}
-        // id="hero-scroll-container"
         className="sticky top-0 left-0 h-screen w-full overflow-hidden flex items-center justify-center"
       >
-        <HeroCanvas />
+        {/* Pass the state setter to the Canvas */}
+        <HeroCanvas onReady={() => setIsCanvasReady(true)} />
 
-        <HeroTextOverlays />
+        {/* Pass the ready state to the Overlays */}
+        <HeroTextOverlays isReady={isCanvasReady} />
 
-        {/* <div className="absolute inset-0 bg-gradient-to-t from-[#03060d]/55 via-transparent to-transparent pointer-events-none z-[5]" /> */}
         <div className="absolute inset-0 bg-[#03060d]/20 pointer-events-none z-[5]" />
 
-        <div className="absolute bottom-5 md:left-10 left-6 md:w-auto w-[8rem]  pointer-events-none z-10 text-white/40 text-left md:text-md text-sm tracking-[0.1em] uppercase">
+        <div className="absolute bottom-5 md:left-10 left-6 md:w-auto w-[8rem] pointer-events-none z-10 text-white/40 text-left md:text-md text-sm tracking-[0.1em] uppercase">
           <p>Scroll to explore</p>
         </div>
       </div>
 
       <div className="absolute bottom-5 right-10 flex w-[53%] justify-between items-end p-0 pointer-events-auto z-10">
-        <button className="cta-anim hidden md:flex px-10 py-4 bg-white text-xs tracking-[0.25em] uppercase font-bold hover:bg-white/90 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.2)]  relative overflow-hidden rounded-full">
-          <span className="relative z-10  transition-all duration-300 ease-out text-black">
+        <button className="cta-anim hidden md:flex px-10 py-4 bg-white text-xs tracking-[0.25em] uppercase font-bold hover:bg-white/90 transition-colors shadow-[0_0_30px_rgba(255,255,255,0.2)] relative overflow-hidden rounded-full">
+          <span className="relative z-10 transition-all duration-300 ease-out text-black">
             <HoverText>Join GIMiN</HoverText>
           </span>
         </button>

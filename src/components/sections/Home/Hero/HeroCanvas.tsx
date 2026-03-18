@@ -11,7 +11,7 @@ if (typeof window !== "undefined") {
 
 const FRAME_COUNT = 240;
 
-export default function HeroCanvas() {
+export default function HeroCanvas({ onReady }: { onReady?: () => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const frameRef = useRef({ current: 1 });
 
@@ -37,12 +37,29 @@ export default function HeroCanvas() {
     if (!context) return;
 
     // 1. SMART PRELOADING
+    // const loadFrame = (index: number) => {
+    //   const img = new Image();
+    //   img.src = `/imageFrame/ezgif-frame-${index.toString().padStart(3, "0")}.png`;
+    //   img.onload = () => {
+    //     imagesRef.current[index - 1] = img;
+    //     // If the user scrolled to this frame while it was loading, draw it immediately
+    //     if (index === Math.round(frameRef.current.current)) {
+    //       render(index);
+    //     }
+    //   };
+    // };
+
     const loadFrame = (index: number) => {
       const img = new Image();
       img.src = `/imageFrame/ezgif-frame-${index.toString().padStart(3, "0")}.png`;
       img.onload = () => {
         imagesRef.current[index - 1] = img;
-        // If the user scrolled to this frame while it was loading, draw it immediately
+
+        // ADD THIS: Tell the Boss component that frame 1 is ready!
+        if (index === 1 && onReady) {
+          onReady();
+        }
+
         if (index === Math.round(frameRef.current.current)) {
           render(index);
         }

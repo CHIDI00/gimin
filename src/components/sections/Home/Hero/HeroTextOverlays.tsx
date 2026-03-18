@@ -86,7 +86,7 @@ const labels = [
   },
 ];
 
-export default function HeroTextOverlays() {
+export default function HeroTextOverlays({ isReady }: { isReady?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -175,7 +175,9 @@ export default function HeroTextOverlays() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-none z-10 w-full h-full"
+      className={`absolute inset-0 pointer-events-none z-10 w-full h-full transition-opacity duration-700 ease-out ${
+        isReady ? "opacity-100" : "opacity-0"
+      }`}
     >
       {/* SVG Canvas */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none">

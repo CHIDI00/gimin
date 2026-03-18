@@ -85,13 +85,13 @@ export default function ContactForm() {
         </button>
       </form>
 
-      <div className="relative w-full h-[300px] mt-10 overflow-hidden bg-[#111]">
+      <div className="relative w-full md:h-[700px] h-[450px] mt-10 overflow-hidden bg-[#111]">
         <Image
           src="/scatteredImages/scatter-0.png"
           alt="Contact Support"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 ease-out"
+          className="object-cover object-center "
         />
       </div>
     </div>
