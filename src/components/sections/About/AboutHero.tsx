@@ -39,32 +39,31 @@ export default function AboutHero() {
       ref={containerRef}
       className="relative w-full h-screen min-h-[600px] flex items-center justify-center bg-[#050505] overflow-hidden z-20 pt-20"
     >
-      {/* Background Image Container */}
+      {/* background image */}
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-neutral-700 animate-pulse -z-20" />
 
-        {/* Fallback image path, replace with actual gym image */}
         <Image
           src="/giminheroimage.png"
           alt="Dark moody gym background"
           fill
+          priority
+          sizes="100vw"
           className="object-cover object-center opacity-100 mix-blend-overlay -z-10"
         />
 
-        {/* Gradients to blend into the next sections */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505] opacity-90 -z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-transparent to-[#050505] opacity-60 -z-10"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-360 px-6 md:px-12 lg:px-10 flex flex-col justify-center h-full">
+      <div className="relative z-10 w-full max-w-[90rem] px-6 md:px-12 lg:px-10 flex flex-col justify-center h-full mx-auto">
         {/* Small Tagline */}
         <div className="hero-tag mb-8 opacity-0">
           <p className="text-[#a3a3a3] text-[10px] sm:text-xs tracking-[0.2em] font-medium uppercase border-b border-white/20 inline-block pb-1">
-            EST. 2026 &mdash; LAGOS
+            EST. 2014 - LAGOS
           </p>
         </div>
 
-        {/* Headline */}
         <h1 className="text-[15vw] sm:text-[12vw] lg:text-[5vw] font-black uppercase leading-[0.85] tracking-tighter text-white">
           <div className="overflow-hidden pb-2">
             <span className="block hero-headline-line translate-y-full opacity-0">

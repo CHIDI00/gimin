@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -57,6 +58,7 @@ export default function ProgramStory() {
       className="relative w-full bg-[#050505] py-24 md:py-32 px-6 md:px-12 lg:px-14 z-20"
     >
       <div className="max-w-screen-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        {/* left side*/}
         <div className="grid grid-cols-4 gap-2 md:gap-7 w-full aspect-[4/5] lg:aspect-1/2">
           {gridPattern.map((item, index) => {
             if (item === 0) {
@@ -66,20 +68,26 @@ export default function ProgramStory() {
             return (
               <div
                 key={index}
-                className="scatter-image w-full h-full bg-[#1a1a1a] overflow-hidden"
+                className="scatter-image w-full h-full bg-[#1a1a1a] overflow-hidden relative"
               >
-                <div
-                  className="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-110"
-                  style={{
-                    backgroundColor: `hsl(0, 0%, ${18 + index * 3}%)`,
-                    backgroundImage: `url(/scatteredImages/scatter-${index}.png)`,
-                  }}
-                />
+                <div className="w-full h-full transition-transform duration-700 hover:scale-110 relative">
+                  <Image
+                    src={`/scatteredImages/scatter-${index}.png`}
+                    alt={`Program detail ${index}`}
+                    fill
+                    sizes="(max-width: 768px) 25vw, (max-width: 1200px) 20vw, 10vw"
+                    className="object-cover object-center"
+                    style={{
+                      backgroundColor: `hsl(0, 0%, ${18 + index * 3}%)`,
+                    }}
+                  />
+                </div>
               </div>
             );
           })}
         </div>
 
+        {/* right side */}
         <div className="flex flex-col justify-center max-w-xl">
           <h2 className="story-text text-white text-4xl md:text-5xl font-medium tracking-tight mb-8 leading-tight">
             Why We Created <br /> These Programs

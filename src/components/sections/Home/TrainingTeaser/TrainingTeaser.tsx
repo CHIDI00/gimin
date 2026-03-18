@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -120,20 +121,24 @@ export default function TrainingTeaser() {
               key={pillar.id}
               className="teaser-card group relative block aspect-[4/5] overflow-hidden bg-[#1a1a1a] rounded-sm"
             >
-              {/* Parallax Wrapper */}
+              {/* parallax */}
               <div className="parallax-wrapper absolute -top-[15%] -bottom-[15%] left-0 right-0 w-full">
-                {/* Image Background */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-105"
-                  style={{ backgroundImage: `url(${pillar.image})` }}
-                />
+                {/* The scaling wrapper for the hover effect */}
+                <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
+                  <Image
+                    src={pillar.image}
+                    alt={`${pillar.title} discipline`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover object-center"
+                  />
+                </div>
               </div>
 
-              {/* Dark Gradient Overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
-              {/* Text Content locked to the bottom */}
-              <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 flex flex-col justify-end z-10">
+              {/* text content*/}
+              <div className="absolute bottom-0 left-0 w-full p-8 md:p-10 flex flex-col justify-end z-20">
                 <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wide mb-2">
                   {pillar.title}
                 </h3>

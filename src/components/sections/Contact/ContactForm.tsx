@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-
-import contactImage from "../../../../public/scatteredImages/scatter-0.png";
 import HoverText from "@/components/ui/HoverText";
 
 export default function ContactForm() {
@@ -16,7 +14,7 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
+
     console.log(formData);
   };
 
@@ -87,13 +85,13 @@ export default function ContactForm() {
         </button>
       </form>
 
-      <div className="w-full pt-10">
+      <div className="relative w-full h-[300px] mt-10 overflow-hidden bg-[#111]">
         <Image
-          src={contactImage}
-          alt="contact"
-          width={1000}
-          height={300}
-          className="w-full h-full object-cover"
+          src="/scatteredImages/scatter-0.png"
+          alt="Contact Support"
+          fill
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 ease-out"
         />
       </div>
     </div>

@@ -12,7 +12,7 @@ if (typeof window !== "undefined") {
 
 const teamMembers = [
   {
-    name: "MARCUS COLE",
+    name: "MARCUS CHiDI",
     role: "HEAD COACH - STRENGTH & POWER",
     image: "/cole.png",
   },
@@ -122,7 +122,8 @@ export default function Team() {
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover object-top filter md:grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
                 />
               </div>
 

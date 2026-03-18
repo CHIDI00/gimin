@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-
 import Image from "next/image";
 
 if (typeof window !== "undefined") {
@@ -35,7 +34,7 @@ const quotes = [
 export default function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLImageElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null); // Updated back to HTMLDivElement
   const contentRef = useRef<HTMLDivElement>(null);
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
 
@@ -124,20 +123,20 @@ export default function Testimonials() {
     >
       <div
         ref={containerRef}
-        className="relative w-full max-w-360 h-200 py-24 md:py-32 px-6 md:px-12 lg:px-24 flex items-center justify-center overflow-hidden mx-auto rounded-lg"
+        className="relative w-full max-w-[90rem] h-[50rem] py-24 md:py-32 px-6 md:px-12 lg:px-24 flex items-center justify-center overflow-hidden mx-auto rounded-lg"
       >
         <div
           ref={bgRef}
-          className="absolute -top-[15%] left-0 w-full min-w-full h-[130%] bg-cover bg-center bg-no-repeat z-0"
-        />
-        <Image
-          ref={bgRef}
-          src="/testbg2.png"
-          alt="Parallax Background"
-          width={1920}
-          height={1080}
-          className="absolute -top-[15%] left-0 w-full h-[130%] object-cover object-center z-0 opacity-60"
-        />
+          className="absolute -top-[15%] left-0 w-full h-[130%] z-0"
+        >
+          <Image
+            src="/testbg2.png"
+            alt="Parallax Background"
+            fill
+            sizes="100vw"
+            className="object-cover object-center opacity-60"
+          />
+        </div>
 
         <div className="absolute inset-0 bg-[#03060d]/50 pointer-events-none z-[5]" />
 
