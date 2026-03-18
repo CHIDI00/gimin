@@ -81,7 +81,7 @@ export default function AboutPhilosophy() {
               Our Philosophy
             </p>
 
-            <h2 className="text-[12vw] sm:text-[9vw] lg:text-[5vw] xl:text-[3.5vw] font-black uppercase leading-[0.9] tracking-tighter text-white font-['Oswald',sans-serif]">
+            <h2 className="text-[12vw] sm:text-[9vw] lg:text-[6vw] xl:text-[3.5vw] font-black uppercase leading-[0.9] tracking-tighter text-white font-['Oswald',sans-serif]">
               <div className="overflow-hidden pb-1">
                 <span className="block phil-headline-line translate-y-full opacity-0">
                   Performance
