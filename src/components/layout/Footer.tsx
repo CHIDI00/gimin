@@ -139,7 +139,10 @@ export default function Footer() {
                   </a>
                 </li> */}
                 <li>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <a
+                    href="/about"
+                    className="hover:text-white transition-colors"
+                  >
                     <HoverText>Journal</HoverText>
                   </a>
                 </li>
